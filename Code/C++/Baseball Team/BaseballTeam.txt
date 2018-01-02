@@ -1,0 +1,62 @@
+
+
+Mary Hansen
+2 1 7 2 3 2
+
+
+
+Orville Verde
+1 0 12 5 12 3
+David Nilsen
+0 0 0 0 0 0
+Clark Gable
+2 0 14 2 10 5
+Claw Hammer
+0 2 2 0 1 1
+Random Superhero
+1 1 4 2 3 1
+Noodlearm Johnson
+0 0 1 5 6 3
+Rolando Gerner
+1 0 12 5 7 6
+Norbert Shockey
+0 0 3 0 3 1
+Katinka Erdale
+0 0 2 1 1 0
+
+Charles Babbage
+
+C 12 2 0 0 0
+
+Kenya Valle
+
+1B 19 7 2 4 1
+
+Luke Skywalker
+2B 0 0 0 0 1
+Sally Field
+3B 21 7 1 8 3
+Nari Takahashi
+SS 22 8 0 3 2
+Joe Schmough
+OF 20 6 2 5 1
+Mary Ennis
+OF 19 4 0 2 1
+Yvette Crester
+OF 15 3 0 1 0
+Michael Ellinger
+DH 13 5 2 0 0
+
+Alvaro Ochoa
+U 6 2 0 0 1
+
+Woodland Being
+P
+Angel Charley
+OF
+Professor Trelawny
+C
+Average Joe
+U
+Sandy Koufax
+P
