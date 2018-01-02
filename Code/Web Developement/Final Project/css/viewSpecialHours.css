@@ -1,0 +1,23 @@
+table{
+	max-width:75%;
+	width:75%;
+	border:2px solid;
+	margin:5% auto;
+}
+th{
+	border: 2px solid;
+}
+tr{
+	border: 1px solid;
+}
+td{
+	border:1px solid;
+}
+#container{
+	margin:0 auto;
+}
+
+#return{
+	display: block;
+	margin:0 auto;
+}

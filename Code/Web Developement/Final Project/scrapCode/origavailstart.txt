@@ -1,0 +1,95 @@
+<?php 
+//EDIT:
+//changed date format from 'y-n-j' to 'y-m-d' [9]; 
+//changed currdate[14]
+include $_SERVER['DOCUMENT_ROOT'] . 'Final/html/reserve/php/db/database.php';
+$con = db_connect();
+date_default_timezone_set('America/Chicago');
+$date = mysqli_real_escape_string($con, $_POST['date']);
+$building = mysqli_real_escape_string($con, $_POST['build']);
+$roomNum = mysqli_real_escape_string($con, $_POST['rnum']);
+    //$date = date('Y-m-d', strtotime($date));
+    // Check what day the user selected
+    $currdate = date('Y-m-d',strtotime($date));
+    //Check if the selected date is a special hour
+    
+    //echo "<script type='text/javascript'>alert('$message');</script>";
+    $currday = date("l",strtotime($currdate));
+    // Get starttime and endtime for that dayname
+    $currTimes = $con->query("SELECT start_time,end_time FROM days WHERE day_name = '".$currday."' ORDER BY id");
+    $result = mysqli_fetch_assoc($currTimes);
+    $st = $result["start_time"];
+    $et = $result["end_time"];
+    //Populate options from starttime to endtime -1
+    
+    //Get start hour
+    $out = array();
+    //$s = date("H:i A",strtotime($st));
+    $startHour = date("H",strtotime($st));
+    $startRest = date(":i",strtotime($st));
+    
+    /* $timeStartArray = str_split($st,1); //Parse the start time into in array
+    $startFirstTwo = $timeStartArray[0].$timeStartArray[1]; // Combine the first 2 digits of the time
+    $startHoursInt = intval($startFirstTwo); // Convert str representation into integer */
+    
+    $endHour = date("H",strtotime($et));
+    $endRest = date(":i",strtotime($et));
+    
+    $intStartHour = intval($startHour);
+    $intEndHour = intval($endHour);
+    //$t = date("H:i A",strtotime($et));
+    /* $timeEndArray = str_split($t,1); //Parse the start time into in array
+    $endFirstTwo = $timeEndArray[0].$timeEndArray[1]; // Combine the first 2 digits of the time
+    $endHoursInt = intval($endFirstTwo); // Convert str representation into integer */
+    
+    //$rest = $timeStartArray[2].$timeStartArray[3].$timeStartArray[4].$timeStartArray[5];
+    //$message = $a;
+    while ($intStartHour < $intEndHour){
+    	//print_r($test);
+    	//echo "<br>";
+    	$startTime = $intStartHour.$startRest;
+    	$startTimeOptions = date("h:i A",strtotime($startTime));
+    	//array_push($out, $f);
+    	array_push($out, $startTimeOptions);
+    	
+    	$intStartHour = $intStartHour+1;
+    }
+    echo json_encode($out);
+    //print_r($out);
+    
+    /* if ($currdate == $date){
+        $startHour = date('G',strtotime('+1 hour'));
+    }
+    else {
+        $startHour = 8;
+    }
+
+    $array1 = array();
+    $avail = array();
+    
+    if (!$con) {
+        die('Could not connect: ' . mysqli_error($con));
+    }
+
+
+    $avail_time="SELECT removedstart FROM schedule WHERE startdate = '". $date ."' AND Building = '". $building ."' AND RoomNumber = '". $roomNum ."'"; 
+    $result_time = mysqli_query($con,$avail_time);
+    
+    while($row = mysqli_fetch_array($result_time)) {
+        $output = $row['removedstart'];
+        array_push($array1, $output);
+    }
+    $array1 = implode(",", $array1);
+    $array1 = explode(",", $array1);
+    for($i = $startHour; $i < 23; $i++){
+        if(!in_array(($i . ":00"), $array1)){
+            array_push($avail, "<option value='". $i ."'>" . date('g:i a', strtotime($i . ':00')) . "</option>");
+        }
+    } */
+
+   // echo json_encode($avail);
+    //echo date('Y-n-j', strtotime($testdate));
+    //echo $startHour;
+
+    exit();
+?>
