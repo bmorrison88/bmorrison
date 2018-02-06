@@ -1,0 +1,53 @@
+@CHARSET "ISO-8859-1";
+body{
+	margin: 0;
+}
+div#nav{
+	color: red;
+	background-color: black;
+	display: inherit;
+	text-align: center;
+}
+h1#title{
+	margin-bottom: 0;
+}
+ul{
+	padding: 1%;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+li{
+	font-size: 150%;
+	list-style-type: none;
+	display: inline;
+	margin: 1%;
+}
+a{
+	text-decoration: none;
+	margin-bottom: 2%;
+}
+a:visited{
+	color: red;
+}
+div#menu{
+	display: inline;
+}
+div#main{
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+div#aboutUs{
+	margin-left: 25%;
+	max-width: 50%;
+}
+b,em,h1{
+	color: red;
+}
+div{
+	width: auto;
+}
+img{
+	max-width: 100%;
+}
