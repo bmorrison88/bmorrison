@@ -1,0 +1,10 @@
+div.ng-scope{
+    background-color:blanchedalmond;
+    border: 2px solid gray;
+    width: 25%;
+    min-width: 350px;
+    padding: 2%;
+}
+span{
+    color: red;
+}
